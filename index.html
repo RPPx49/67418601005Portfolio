@@ -30,13 +30,13 @@
     .animate-slide-in { animation: slideIn 0.5s ease-out forwards; }
     .animate-scale-in { animation: scaleIn 0.2s ease-out forwards; }
     
-    /* --- Slider Styles (ล็อคสัดส่วน 16:9) --- */
+    /* --- Slider Styles (ปรับแก้เพื่อรองรับ Responsive) --- */
     .slider-container {
       position: relative;
       overflow: hidden;
       border-radius: 1rem;
       width: 100%;
-      aspect-ratio: 16 / 9; /* ล็อคสัดส่วน 16:9 */
+      /* ลบ aspect-ratio ตรงนี้ออก เพื่อไปคุมใน HTML แทน */
       background-color: #0f172a;
     }
     
@@ -208,7 +208,7 @@
      <section class="mb-12 animate-fade-in">
       <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
        <div class="lg:col-span-2">
-        <div class="slider-container glass min-h-96 relative group">
+        <div class="slider-container glass aspect-video lg:aspect-auto lg:min-h-96 relative group">
          <div class="slider-track w-full h-full" id="slider-track"></div>
          <button class="absolute left-4 top-1/2 -translate-y-1/2 z-20 p-3 rounded-full bg-black/50 hover:bg-black/70 text-white opacity-0 group-hover:opacity-100 transition-opacity" id="slider-prev"><svg class="w-6 h-6" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" /></svg></button>
          <button class="absolute right-4 top-1/2 -translate-y-1/2 z-20 p-3 rounded-full bg-black/50 hover:bg-black/70 text-white opacity-0 group-hover:opacity-100 transition-opacity" id="slider-next"><svg class="w-6 h-6" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" /></svg></button>
